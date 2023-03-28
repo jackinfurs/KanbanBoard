@@ -8,10 +8,68 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
+
+void display_Board()
+{
+
+}
+
+void load_Board()
+{
+
+}
+
+void edit_List()
+{
+
+}
+
+void edit_Board()
+{
+
+}
+
+void save_Board()
+{
+
+}
+
+int menu()
+{
+    int choice;
+    printf("\nMenu:\n\t1.\tDisplay board\n\t2.\tLoad board from file\n\t3.\tEdit list\n\t4.\tEdit board\n\t5.\tSave board to file\n\t6.\tQuit\n");
+    printf("Enter your choice (1-6):\n");
+    scanf("%d", &choice);
+    switch (choice)
+    {
+        case 1:
+            display_Board();
+            break;
+        case 2:
+            load_Board();
+            break;
+        case 3:
+            edit_List();
+            break;
+        case 4:
+            edit_Board();
+            break;
+        case 5:
+            save_Board();
+            break;
+        case 6:
+            return 0;
+        default: // error checking
+            printf("Invalid entry.\n");
+            exit(1);
+    }
+}
 
 int main(void)
 {
-    return 0;
+    printf("Kanban-style Board Program\n");
+    menu();
 }
 
 /*
