@@ -13,3 +13,4 @@ How were boards saved?
 
 
 What's your ASCII art about?
+Our ASCII art is Karl Marx. This is a placeholder. Jack is reading the Communist Manifesto.
