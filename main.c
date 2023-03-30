@@ -2,7 +2,7 @@
  * COMP10050 Software Engineering Assignment 3
  * Group BQ
  *      Jack Dunne          22483576
- *      Maciej Szmagara     22325591 n
+ *      Maciej Szmagara     22325591
  * https://csgitlab.ucd.ie/jack-dunne626/bqassignment3.git
  *
  */
@@ -39,7 +39,7 @@ int menu()
 {
     int choice;
     printf("\nMenu:\n\t1.\tDisplay board\n\t2.\tLoad board from file\n\t3.\tEdit list\n\t4.\tEdit board\n\t5.\tSave board to file\n\t6.\tQuit\n");
-    printf("Enter your choice (1-6):\n");
+    printf("Enter your choice (1-6):\n\n");
     scanf("%d", &choice);
     switch (choice)
     {
