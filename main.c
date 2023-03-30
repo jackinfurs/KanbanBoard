@@ -2,7 +2,7 @@
  * COMP10050 Software Engineering Assignment 3
  * Group BQ
  *      Jack Dunne          22483576
- *      Maciej Szmagara     (insert student number)
+ *      Maciej Szmagara     22325591
  * https://csgitlab.ucd.ie/jack-dunne626/bqassignment3.git
  *
  */
