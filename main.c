@@ -15,22 +15,25 @@ char filename[MAX_FILENAME] = "default.txt";
 
 void display_Board()
 {
+    printf("\n");
     // open filename (unless other board loaded, it's default.txt)
     FILE *fp;
     fp = fopen(filename,"r");
     // print contents while file pointer != eof
-    int c = getchar();
+    int c = fgetc(fp);
     while (c != EOF)
     {
         printf("%c",c);
-        c = getchar();
+        c = fgetc(fp);
     }
     // close
     fclose(fp);
+    printf("\n");
 }
 
 void load_Board()
 {
+    printf("\n");
     // set filename equal to whatever is entered
     printf("Enter filename:\n");
     scanf("%s",filename);
@@ -43,14 +46,15 @@ void load_Board()
         printf("%s could not be opened.\n",filename);
     }
     // print all contents
-    int c = getchar();
+    int c = fgetc(fp);
     while (c != EOF)
     {
         printf("%c",c);
-        c = getchar();
+        c = fgetc(fp);
     }
     // close
     fclose(fp);
+    printf("\n");
 }
 
 void edit_List()
@@ -72,7 +76,7 @@ int menu()
 {
     int choice;
     printf("\nMenu:\n\t1.\tDisplay board\n\t2.\tLoad board from file\n\t3.\tEdit list\n\t4.\tEdit board\n\t5.\tSave board to file\n\t6.\tQuit\n");
-    printf("Enter your choice (1-6):\n\n");
+    printf("Enter your choice (1-6):\n");
     scanf("%d", &choice);
     switch (choice)
     {
@@ -92,7 +96,7 @@ int menu()
             save_Board();
             break;
         case 6:
-            return 0;
+            exit(0);
         default: // error checking
             printf("Invalid entry.\n");
             exit(1);
@@ -103,7 +107,10 @@ int main(void)
 {
 
     printf("Kanban-style Board Program\n");
-    menu();
+    while (1)
+    {
+        menu();
+    }
 }
 
 /*
