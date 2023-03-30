@@ -2,22 +2,55 @@
  * COMP10050 Software Engineering Assignment 3
  * Group BQ
  *      Jack Dunne          22483576
- *      Maciej Szmagara     22325591 n
+ *      Maciej Szmagara     22325591
  * https://csgitlab.ucd.ie/jack-dunne626/bqassignment3.git
  *
  */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "definitions.h"
+
+char filename[MAX_FILENAME] = "default.txt";
 
 void display_Board()
 {
-
+    // open filename (unless other board loaded, it's default.txt)
+    FILE *fp;
+    fp = fopen(filename,"r");
+    // print contents while file pointer != eof
+    int c = getchar();
+    while (c != EOF)
+    {
+        printf("%c",c);
+        c = getchar();
+    }
+    // close
+    fclose(fp);
 }
 
 void load_Board()
 {
-
+    // set filename equal to whatever is entered
+    printf("Enter filename:\n");
+    scanf("%s",filename);
+    // open filename
+    FILE *fp;
+    fp = fopen(filename,"r");
+    // if it cannot be opened, display error
+    if (fp == NULL)
+    {
+        printf("%s could not be opened.\n",filename);
+    }
+    // print all contents
+    int c = getchar();
+    while (c != EOF)
+    {
+        printf("%c",c);
+        c = getchar();
+    }
+    // close
+    fclose(fp);
 }
 
 void edit_List()
@@ -39,7 +72,7 @@ int menu()
 {
     int choice;
     printf("\nMenu:\n\t1.\tDisplay board\n\t2.\tLoad board from file\n\t3.\tEdit list\n\t4.\tEdit board\n\t5.\tSave board to file\n\t6.\tQuit\n");
-    printf("Enter your choice (1-6):\n");
+    printf("Enter your choice (1-6):\n\n");
     scanf("%d", &choice);
     switch (choice)
     {
