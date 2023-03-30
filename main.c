@@ -68,6 +68,7 @@ int menu()
 
 int main(void)
 {
+
     printf("Kanban-style Board Program\n");
     menu();
 }
