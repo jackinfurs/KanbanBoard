@@ -18,12 +18,12 @@ void display_Board()
     printf("\n");
     // open filename (unless other board loaded, it's default.txt)
     FILE *fp;
-    fp = fopen(filename,"r");
+    fp = fopen(filename, "r");
     // print contents while file pointer != eof
     int c = fgetc(fp);
     while (c != EOF)
     {
-        printf("%c",c);
+        printf("%c", c);
         c = fgetc(fp);
     }
     // close
@@ -36,20 +36,21 @@ void load_Board()
     printf("\n");
     // set filename equal to whatever is entered
     printf("Enter filename:\n");
-    scanf("%s",filename);
+    scanf("%s", filename);
+    printf("\n");
     // open filename
     FILE *fp;
-    fp = fopen(filename,"r");
+    fp = fopen(filename, "r");
     // if it cannot be opened, display error
     if (fp == NULL)
     {
-        printf("%s could not be opened.\n",filename);
+        printf("%s could not be opened.\n", filename);
     }
     // print all contents
     int c = fgetc(fp);
     while (c != EOF)
     {
-        printf("%c",c);
+        printf("%c", c);
         c = fgetc(fp);
     }
     // close
@@ -105,7 +106,6 @@ int menu()
 
 int main(void)
 {
-
     printf("Kanban-style Board Program\n");
     while (1)
     {
