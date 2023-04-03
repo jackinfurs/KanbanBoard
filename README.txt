@@ -1,7 +1,7 @@
- COMP 10050 Software Engineering Assignment 3
+COMP 10050 Software Engineering Assignment 3
  Group BQ:
 	Jack Dunne			22483576
-	Maciej Szmagara 		22325591
+	Maciej Szmagara 	22325591
 
 How was the board loaded?
 
