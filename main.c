@@ -11,6 +11,9 @@
 // import necessary libs
 #include <stdio.h>
 #include <stdlib.h>
+// import local files
+#include "editList.h"
+#include "editBoard.h"
 // import definitions
 #include "definitions.h"
 
@@ -69,16 +72,6 @@ void load_Board()
     printf("\n");
 }
 
-void edit_List()
-{
-
-}
-
-void edit_Board()
-{
-
-}
-
 void save_Board()
 {
     FILE *fpRead;
@@ -119,9 +112,11 @@ int menu()
             load_Board();
             break;
         case 3:
+            // editList.c
             edit_List();
             break;
         case 4:
+            // editBoard.c
             edit_Board();
             break;
         case 5:
