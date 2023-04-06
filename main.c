@@ -112,9 +112,11 @@ int menu()
             load_Board();
             break;
         case 3:
+            // editList.c
             edit_List();
             break;
         case 4:
+            // editBoard.c
             edit_Board();
             break;
         case 5:
