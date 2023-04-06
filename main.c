@@ -1,4 +1,5 @@
 /*
+ *
  * COMP10050 Software Engineering Assignment 3
  * Group BQ
  *      Jack Dunne          22483576
@@ -20,7 +21,7 @@ void init_Board()
     FILE *fp;
     fp = fopen(filename, "w");
     fprintf(fp,
-            "Nick:\n\t3070 RTX\nTim:\n\tOculus Quest 2\nDante:\n\tOculus Quest 1\n\t3070 RTX\nAbey:\n\tOculus Pro\n\tOculus Quest 1");
+            "Abey:\n\tOculus Pro\n\tOculus Quest 1\nDante:\n\t3070 RTX\n\tOculus Quest 1\nNick:\n\t3070 RTX\nTim:\n\tOculus Quest 2");
     fclose(fp);
 }
 
