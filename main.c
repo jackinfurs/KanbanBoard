@@ -11,6 +11,9 @@
 // import necessary libs
 #include <stdio.h>
 #include <stdlib.h>
+// import local files
+#include "editList.h"
+#include "editBoard.h"
 // import definitions
 #include "definitions.h"
 
@@ -67,16 +70,6 @@ void load_Board()
     // close
     fclose(fp);
     printf("\n");
-}
-
-void edit_List()
-{
-
-}
-
-void edit_Board()
-{
-
 }
 
 void save_Board()
