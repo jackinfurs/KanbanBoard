@@ -7,8 +7,10 @@
  *
  */
 
+// import necessary libs
 #include <stdio.h>
 #include <stdlib.h>
+// import definitions
 #include "definitions.h"
 
 char filename[MAX_FILENAME] = "default.txt";
@@ -16,8 +18,9 @@ char filename[MAX_FILENAME] = "default.txt";
 void init_Board()
 {
     FILE *fp;
-    fp = fopen(filename,"w");
-    fprintf(fp,"Nick:\n\t3070 RTX\nTim:\n\tOculus Quest 2\nDante:\n\tOculus Quest 1\n\t3070 RTX\nAbey:\n\tOculus Pro\n\tOculus Quest 1");
+    fp = fopen(filename, "w");
+    fprintf(fp,
+            "Nick:\n\t3070 RTX\nTim:\n\tOculus Quest 2\nDante:\n\tOculus Quest 1\n\t3070 RTX\nAbey:\n\tOculus Pro\n\tOculus Quest 1");
     fclose(fp);
 }
 
@@ -78,11 +81,11 @@ void edit_Board()
 void save_Board()
 {
     FILE *fpRead;
-    fpRead = fopen(filename,"r");
+    fpRead = fopen(filename, "r");
     printf("\nEnter filename:\n");
-    scanf(" %s",filename);
+    scanf(" %s", filename);
     FILE *fpWrite;
-    fpWrite = fopen(filename,"w");
+    fpWrite = fopen(filename, "w");
 
     // on program start, initialise default.txt
     // to save changes to inputted filename:
@@ -91,7 +94,7 @@ void save_Board()
     int c = fgetc(fpRead);
     while (c != EOF)
     {
-        fputc(c,fpWrite);
+        fputc(c, fpWrite);
         c = fgetc(fpRead);
     }
     // close
