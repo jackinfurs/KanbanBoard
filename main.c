@@ -13,6 +13,14 @@
 
 char filename[MAX_FILENAME] = "default.txt";
 
+void init_Board()
+{
+    FILE *fp;
+    fp = fopen(filename,"w");
+    fprintf(fp,"Nick:\n\t3070 RTX\nTim:\n\tOculus Quest 2\nDante:\n\tOculus Quest 1\n\t3070 RTX\nAbey:\n\tOculus Pro\n\tOculus Quest 1");
+    fclose(fp);
+}
+
 void display_Board()
 {
     printf("\n");
@@ -33,9 +41,8 @@ void display_Board()
 
 void load_Board()
 {
-    printf("\n");
     // set filename equal to whatever is entered
-    printf("Enter filename:\n");
+    printf("\nEnter filename:\n");
     scanf("%s", filename);
     printf("\n");
     // open filename
@@ -70,11 +77,31 @@ void edit_Board()
 
 void save_Board()
 {
+    FILE *fpRead;
+    fpRead = fopen(filename,"r");
+    printf("\nEnter filename:\n");
+    scanf(" %s",filename);
+    FILE *fpWrite;
+    fpWrite = fopen(filename,"w");
 
+    // on program start, initialise default.txt
+    // to save changes to inputted filename:
+    // copy every char from default.txt into filename
+
+    int c = fgetc(fpRead);
+    while (c != EOF)
+    {
+        fputc(c,fpWrite);
+        c = fgetc(fpRead);
+    }
+    // close
+    fclose(fpRead);
+    fclose(fpWrite);
 }
 
 int menu()
 {
+    init_Board();
     int choice;
     printf("\nMenu:\n\t1.\tDisplay board\n\t2.\tLoad board from file\n\t3.\tEdit list\n\t4.\tEdit board\n\t5.\tSave board to file\n\t6.\tQuit\n");
     printf("Enter your choice (1-6):\n");
