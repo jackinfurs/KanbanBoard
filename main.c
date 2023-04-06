@@ -17,6 +17,12 @@
 // import definitions
 #include "definitions.h"
 
+typedef struct list{
+    char name[MAX_NAME];
+    char item[MAX_ITEMS][MAX_NAME];
+    struct list *next;
+}List;
+
 char filename[MAX_FILENAME] = "default.txt";
 
 void init_Board()
@@ -113,11 +119,11 @@ int menu()
             break;
         case 3:
             // editList.c
-            edit_List();
+            //edit_List();
             break;
         case 4:
             // editBoard.c
-            edit_Board();
+           // edit_Board();
             break;
         case 5:
             save_Board();
