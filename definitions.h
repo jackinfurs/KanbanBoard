@@ -7,7 +7,6 @@
 
 #define MAX_FILENAME    32
 #define MAX_NAME        32
-
 #define MAX_ITEMS       10
 
 #endif //BQASSIGNMENT3_DEFINITIONS_H
