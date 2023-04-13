@@ -1,7 +1,3 @@
-//
-// Created by dynam on 30/03/2023.
-//
-
 #ifndef BQASSIGNMENT3_DEFINITIONS_H
 #define BQASSIGNMENT3_DEFINITIONS_H
 
