@@ -1,7 +1,3 @@
-//
-// Created by dynam on 06/04/2023.
-//
-
 #include "editBoard.h"
 
 int edit_Board()

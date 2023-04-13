@@ -17,25 +17,35 @@
 // import definitions
 #include "definitions.h"
 
-typedef struct list{
+// struct for linked list
+typedef struct list
+{
     char name[MAX_NAME];
     char item[MAX_ITEMS][MAX_NAME];
     struct list *next;
-}List;
+} List;
 
+// global var for filename
+// at launch, declare as default.txt
 char filename[MAX_FILENAME] = "default.txt";
 
+// void function to clear default board
 void init_Board()
 {
+    // open file of name filename to write (usually default.txt)
     FILE *fp;
     fp = fopen(filename, "w");
+    // clear and write default to file
     fprintf(fp,
             "Abey:\n\tOculus Pro\n\tOculus Quest 1\nDante:\n\t3070 RTX\n\tOculus Quest 1\nNick:\n\t3070 RTX\nTim:\n\tOculus Quest 2");
     fclose(fp);
 }
 
+// void function to display the board via filehandling
 void display_Board()
 {
+    // print newline
+    // (might remove at a later date, kinda useless)
     printf("\n");
     // open filename (unless other board loaded, it's default.txt)
     FILE *fp;
@@ -52,6 +62,7 @@ void display_Board()
     printf("\n");
 }
 
+// void function to load an inputted board
 void load_Board()
 {
     // set filename equal to whatever is entered
@@ -73,17 +84,20 @@ void load_Board()
         printf("%c", c);
         c = fgetc(fp);
     }
-    // close
+    // close and print newline
     fclose(fp);
     printf("\n");
 }
 
+// void function to save board to an inputted filename
 void save_Board()
 {
+    // file ptr to read from changed txt file
     FILE *fpRead;
     fpRead = fopen(filename, "r");
     printf("\nEnter filename:\n");
     scanf(" %s", filename);
+    // file ptr to write to new txt file
     FILE *fpWrite;
     fpWrite = fopen(filename, "w");
 
@@ -102,9 +116,10 @@ void save_Board()
     fclose(fpWrite);
 }
 
+// int function to display menu
+// return 0 = exit
 int menu()
 {
-    init_Board();
     int choice;
     printf("\nMenu:\n\t1.\tDisplay board\n\t2.\tLoad board from file\n\t3.\tEdit list\n\t4.\tEdit board\n\t5.\tSave board to file\n\t6.\tQuit\n");
     printf("Enter your choice (1-6):\n");
@@ -123,7 +138,7 @@ int menu()
             break;
         case 4:
             // editBoard.c
-           // edit_Board();
+            //edit_Board();
             break;
         case 5:
             save_Board();
@@ -136,9 +151,13 @@ int menu()
     }
 }
 
+// main
 int main(void)
 {
+    // initialise default.txt
+    init_Board();
     printf("Kanban-style Board Program\n");
+    // menu. forever.
     while (1)
     {
         menu();
