@@ -18,16 +18,13 @@
 #include "definitions.h"
 
 // struct for linked list
-typedef struct list
-{
-    char name[MAX_NAME];
-    char item[MAX_ITEMS][MAX_NAME];
-    struct list *next;
-} List;
+
 
 // global var for filename
 // at launch, declare as default.txt
 char filename[MAX_FILENAME] = "default.txt";
+List *head = NULL;
+List *curr = NULL;
 
 // void function to clear default board
 void init_Board()
@@ -134,7 +131,7 @@ int menu()
             break;
         case 3:
             // editList.c
-            //edit_List();
+           // edit_List();
             break;
         case 4:
             // editBoard.c
